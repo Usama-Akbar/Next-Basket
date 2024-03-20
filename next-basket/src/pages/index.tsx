@@ -4,6 +4,9 @@ import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import FeatureProducts from "@/screens/FeatureProducts";
 import FeatureServices from "@/screens/FeatureServices";
+import FeaturePosts from "@/screens/FeaturePosts";
+import FeatureTestimonials from "@/screens/Testimonials";
+import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -69,6 +72,21 @@ export default function Home() {
       <FeatureProducts />
 
       <FeatureServices />
+
+      <FeaturePosts />
+
+      <FeatureTestimonials />
+
+      <Image
+        alt="review"
+        width={0}
+        height={0}
+        style={{ width: "100%", height: "100%" }}
+        unoptimized
+        src={"assets/banner-kitchen.png"}
+      />
+
+      <Footer />
     </>
   );
 }

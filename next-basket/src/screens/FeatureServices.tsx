@@ -41,8 +41,8 @@ const FeatureServices: React.FC = () => {
         <div className="d-flex align-items-center flex-column">
           <Image
             alt="poster"
-            width={72}
-            height={72}
+            width={60}
+            height={36}
             unoptimized
             src={"assets/graph.png"}
           />
