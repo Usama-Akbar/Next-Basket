@@ -1,11 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import { Counter } from "@/components/Counter";
-import { Result } from "@/components/Result";
 import Header from "@/components/Header";
-
+import FeatureProducts from "@/screens/FeatureProducts";
+import FeatureServices from "@/screens/FeatureServices";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -24,12 +22,53 @@ export default function Home() {
         ></link>
       </Head>
       <Header />
-      <main className={`${styles.main} ${inter.className}`}>
+
+      <div className="poster-homepage">
         <div>
-          <Result />
-          <Counter />
+          {" "}
+          <Image
+            alt="poster"
+            width={0}
+            height={0}
+            style={{ width: "100%", height: "100%" }}
+            unoptimized
+            src={"assets/image-1.png"}
+          />
         </div>
-      </main>
+        <div className="d-flex flex-column ms-3">
+          <Image
+            alt="poster"
+            width={0}
+            height={0}
+            style={{ width: "100%", height: "100%" }}
+            unoptimized
+            src={"assets/image-2.png"}
+          />
+          <div className="d-flex mt-3">
+            <Image
+              alt="poster"
+              width={0}
+              height={0}
+              style={{ width: "100%", height: "100%" }}
+              unoptimized
+              src={"assets/image-3.png"}
+            />{" "}
+            <Image
+              alt="poster"
+              className="ms-3"
+              width={0}
+              height={0}
+              style={{ width: "100%", height: "100%" }}
+              unoptimized
+              src={"assets/image-4.png"}
+            />
+          </div>
+        </div>
+      </div>
+
+      <FeatureProducts />
+
+      <FeatureServices />
     </>
   );
 }

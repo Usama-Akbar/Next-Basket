@@ -1,5 +1,36 @@
 .header-main {
   height: 58px;
-  padding: 9px 0px 3px 0px;
+  padding: 24px 36px;
   background-color: #23856d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-txt {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+.logo {
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: 700;
+  margin-right: 120px;
+}
+.link {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  color: #737373;
+  margin-left: 15px;
+}
+.secondary-header-txt {
+  font-size: 14px;
+  font-weight: 700;
+  color: #23a6f0;
+}
+.header-secondary {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 36px;
 }

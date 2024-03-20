@@ -1,0 +1,38 @@
+.feature-heading {
+  font-size: 20px;
+  font-weight: 400;
+  color: #737373;
+}
+.bestseller-txt {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.desc-txt-feature {
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: 400;
+  color: #737373;
+}
+.products-list-div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 30px 10px !important;
+  margin-top: 15px;
+  padding: 5% 15%;
+}
+.features-products-main {
+  margin: 150px 80px;
+}
+.service-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #252b42;
+}
+.service-details {
+  font-size: 14px;
+  font-weight: 400;
+  color: #737373;
+  width: 232px;
+  text-align: center;
+}
