@@ -7,7 +7,7 @@ interface ProductProps {
 const Product: React.FC<ProductProps> = ({ product }) => {
   return (
     <div>
-      <div className="d-flex flex-column align-items-center">
+      <div className="product-main d-flex flex-column align-items-center justify-content-between">
         <Image
           alt="poster"
           width={183}

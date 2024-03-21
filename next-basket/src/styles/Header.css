@@ -15,7 +15,9 @@
   font-size: 24px;
   cursor: pointer;
   font-weight: 700;
-  margin-right: 120px;
+}
+.links-div {
+  margin-left: 120px;
 }
 .link {
   cursor: pointer;
@@ -33,4 +35,28 @@
   display: flex;
   justify-content: space-between;
   padding: 24px 36px;
+}
+@media only screen and (max-width: 999px) {
+  .header-secondary {
+    display: none;
+  }
+  .header-main {
+    display: none;
+  }
+  .header-mobile-nav {
+    padding: 36px 35px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-link-mobile {
+    font-size: 30px;
+    font-weight: 400;
+    color: #737373;
+    margin-top: 30px;
+  }
+  .nav-links-mobile-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 const Header: React.FC = () => {
+  const [mobilenav, setMobileNav] = React.useState<Boolean>(false);
   return (
     <div>
       <div className="header-main">
@@ -120,6 +121,47 @@ const Header: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="header-mobile">
+        <div className="header-mobile-nav">
+          <div className="d-flex align-items-center">
+            <span className="logo">Bandage</span>
+          </div>
+          <div>
+            <Image
+              height="24"
+              width="24"
+              alt="search"
+              unoptimized
+              src={"assets/search-mobile.png"}
+            />
+            <Image
+              height="24"
+              width="24"
+              style={{ marginLeft: "24px" }}
+              alt="cart"
+              unoptimized
+              src={"assets/cart-mobile.png"}
+            />
+            <Image
+              height="13"
+              width="24"
+              style={{ marginLeft: "24px" }}
+              alt="menu"
+              unoptimized
+              onClick={() => setMobileNav(!mobilenav)}
+              src={"assets/menu-mobile.png"}
+            />
+          </div>
+        </div>
+        {mobilenav ? (
+          <div className="nav-links-mobile-div">
+            <span className="nav-link-mobile">Home</span>
+            <span className="nav-link-mobile">Product</span>
+            <span className="nav-link-mobile">Pricing</span>
+            <span className="nav-link-mobile">Contact</span>
+          </div>
+        ) : null}
       </div>
     </div>
   );
