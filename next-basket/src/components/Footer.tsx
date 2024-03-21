@@ -8,14 +8,14 @@ const Footer: React.FC = () => {
       <div className="footer-top">
         <span className="logo">Bandage</span>
 
-        <div>
+        <div className="footer-top-links">
           <Image
             height="24"
             width="24"
             alt="phone"
-            className="ms-3"
+            className=""
             unoptimized
-            src={"assets/instagram-blue.png"}
+            src={"/assets/instagram-blue.png"}
           />
           <Image
             height="24"
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
             alt="phone"
             unoptimized
             className="ms-3"
-            src={"assets/facebook-blue.png"}
+            src={"/assets/facebook-blue.png"}
           />
           <Image
             height="24"
@@ -31,12 +31,12 @@ const Footer: React.FC = () => {
             alt="phone"
             className="ms-3"
             unoptimized
-            src={"assets/twitter-blue.png"}
+            src={"/assets/twitter-blue.png"}
           />
         </div>
       </div>
       <div className="footer-mid">
-        <div>
+        <div className="footer-link-main">
           <span className="footer-heading">Company Info</span>
 
           <div className="footer-links-div">
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
             <span className="footer-link">Blog</span>
           </div>
         </div>
-        <div>
+        <div className="footer-link-main">
           <span className="footer-heading">Legal</span>
 
           <div className="footer-links-div">
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
             <span className="footer-link">Blog</span>
           </div>
         </div>
-        <div>
+        <div className="footer-link-main">
           <span className="footer-heading">Features</span>
 
           <div className="footer-links-div">
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
             <span className="footer-link">Unlimited Support</span>
           </div>
         </div>
-        <div>
+        <div className="footer-link-main">
           <span className="footer-heading">Resources</span>
 
           <div className="footer-links-div">
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
             <span className="footer-link">API</span>
           </div>
         </div>
-        <div>
+        <div className="footer-link-main">
           <span className="footer-heading">Get In Touch</span>
 
           <div className="d-flex" style={{ marginTop: "20px" }}>

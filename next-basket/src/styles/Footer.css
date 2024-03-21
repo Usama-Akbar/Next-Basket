@@ -41,3 +41,26 @@
   font-weight: 700;
   color: #737373;
 }
+
+@media only screen and (max-width: 999px) {
+  .footer-top {
+    padding: 53px 47px;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-top-links {
+    margin-top: 25px;
+  }
+  .footer-mid {
+    padding: 70px 46px;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-link-main {
+    margin-top: 30px;
+  }
+  .footer-bottom {
+    padding: 25px 110px;
+    text-align: center;
+  }
+}

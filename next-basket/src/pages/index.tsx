@@ -19,7 +19,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
 
       <Hometop />
 
@@ -33,6 +32,7 @@ export default function Home() {
 
       <Image
         alt="review"
+        className="kitchen-banner-desktop"
         width={0}
         height={0}
         style={{ width: "100%", height: "100%" }}
@@ -40,7 +40,15 @@ export default function Home() {
         src={"assets/banner-kitchen.png"}
       />
 
-      <Footer />
+      <Image
+        alt="review"
+        className="kitchen-banner-mobile"
+        width={0}
+        height={0}
+        style={{ width: "100%", height: "100%" }}
+        unoptimized
+        src={"assets/kitchen-banner-mobile.png"}
+      />
     </>
   );
 }

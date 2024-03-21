@@ -1,0 +1,7 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+.product-top-details {
+  background-color: #fafafa;
+}
+.breadcrumbs-div {
+  padding: 34px 204px;
+}

@@ -12,7 +12,7 @@ const Header: React.FC = () => {
               width="16"
               alt="phone"
               unoptimized
-              src={"assets/phone.png"}
+              src={"/assets/phone.png"}
             />
             <span className="header-txt ms-2">(225) 555-0118</span>
           </div>
@@ -22,7 +22,7 @@ const Header: React.FC = () => {
               width="16"
               alt="phone"
               unoptimized
-              src={"assets/mail.png"}
+              src={"/assets/mail.png"}
             />
             <span className="header-txt ms-2">michelle.rivera@example.com</span>
           </div>
@@ -40,7 +40,7 @@ const Header: React.FC = () => {
               alt="phone"
               className="ms-3"
               unoptimized
-              src={"assets/instagram.png"}
+              src={"/assets/instagram.png"}
             />
             <Image
               height="16"
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
               alt="phone"
               unoptimized
               className="ms-3"
-              src={"assets/youtube.png"}
+              src={"/assets/youtube.png"}
             />
             <Image
               height="16"
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
               alt="phone"
               unoptimized
               className="ms-3"
-              src={"assets/facebook.png"}
+              src={"/assets/facebook.png"}
             />
             <Image
               height="16"
@@ -64,7 +64,7 @@ const Header: React.FC = () => {
               alt="phone"
               className="ms-3"
               unoptimized
-              src={"assets/twitter.png"}
+              src={"/assets/twitter.png"}
             />
           </div>
         </div>
@@ -87,7 +87,7 @@ const Header: React.FC = () => {
             width="16"
             alt="phone"
             unoptimized
-            src={"assets/user.png"}
+            src={"/assets/user.png"}
           />
           <span className="secondary-header-txt ms-2">Login / Register</span>
 
@@ -97,7 +97,7 @@ const Header: React.FC = () => {
               width="16"
               alt="phone"
               unoptimized
-              src={"assets/search.png"}
+              src={"/assets/search.png"}
             />
             <div className="ms-4">
               <Image
@@ -105,7 +105,7 @@ const Header: React.FC = () => {
                 width="16"
                 alt="phone"
                 unoptimized
-                src={"assets/cart.png"}
+                src={"/assets/cart.png"}
               />
               <span className="secondary-header-txt ms-1">1</span>
             </div>
@@ -115,7 +115,7 @@ const Header: React.FC = () => {
                 width="16"
                 alt="phone"
                 unoptimized
-                src={"assets/heart.png"}
+                src={"/assets/heart.png"}
               />
               <span className="secondary-header-txt ms-1">1</span>
             </div>
@@ -133,7 +133,7 @@ const Header: React.FC = () => {
               width="24"
               alt="search"
               unoptimized
-              src={"assets/search-mobile.png"}
+              src={"/assets/search-mobile.png"}
             />
             <Image
               height="24"
@@ -141,7 +141,7 @@ const Header: React.FC = () => {
               style={{ marginLeft: "24px" }}
               alt="cart"
               unoptimized
-              src={"assets/cart-mobile.png"}
+              src={"/assets/cart-mobile.png"}
             />
             <Image
               height="13"
@@ -150,7 +150,7 @@ const Header: React.FC = () => {
               alt="menu"
               unoptimized
               onClick={() => setMobileNav(!mobilenav)}
-              src={"assets/menu-mobile.png"}
+              src={"/assets/menu-mobile.png"}
             />
           </div>
         </div>
