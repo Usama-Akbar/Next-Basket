@@ -24,7 +24,7 @@ const FeatureServices: React.FC = () => {
             Get your best looking smile now!
           </span>
         </div>
-        <div className="d-flex align-items-center flex-column">
+        <div className="d-flex align-items-center flex-column service-div">
           <Image
             alt="poster"
             width={72}
@@ -38,7 +38,7 @@ const FeatureServices: React.FC = () => {
             beautiful smile
           </span>
         </div>
-        <div className="d-flex align-items-center flex-column">
+        <div className="d-flex align-items-center flex-column service-div">
           <Image
             alt="poster"
             width={60}

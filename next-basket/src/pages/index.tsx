@@ -7,6 +7,7 @@ import FeatureServices from "@/sections/FeatureServices";
 import FeaturePosts from "@/sections/FeaturePosts";
 import FeatureTestimonials from "@/sections/Testimonials";
 import Footer from "@/components/Footer";
+import Hometop from "@/sections/Hometop";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -20,7 +21,7 @@ export default function Home() {
       </Head>
       <Header />
 
-      <Home />
+      <Hometop />
 
       <FeatureProducts />
 

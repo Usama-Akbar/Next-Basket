@@ -36,6 +36,9 @@
   justify-content: space-between;
   padding: 24px 36px;
 }
+.header-mobile {
+  display: none;
+}
 @media only screen and (max-width: 999px) {
   .header-secondary {
     display: none;
@@ -58,5 +61,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .header-mobile {
+    display: block;
   }
 }

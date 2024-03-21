@@ -44,6 +44,7 @@ const FeatureTestimonials: React.FC = () => {
         <div className="reviews-list">
           {reviews.map((review, index) => (
             <Image
+              className="review-image"
               alt="review"
               width={142}
               height={142}

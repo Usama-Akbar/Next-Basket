@@ -24,6 +24,9 @@
 .features-products-main {
   margin: 150px 80px;
 }
+.features-posts-main {
+  margin: 150px 80px;
+}
 .service-title {
   font-size: 24px;
   font-weight: 700;
@@ -43,4 +46,31 @@
   align-items: center;
   justify-content: space-evenly;
   margin-top: 115px;
+}
+@media only screen and (max-width: 999px) {
+  .feature-heading {
+    display: none;
+  }
+  .features-products-main {
+    margin: 80px 60px;
+  }
+  .features-posts-main {
+    margin: 80px 40px;
+  }
+  .bestseller-txt {
+    text-align: center;
+  }
+  .desc-txt-feature {
+    text-align: center;
+  }
+  .products-list-div {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px 10px !important;
+    margin-top: 15px;
+    padding: 5% 15%;
+  }
+  .load-more-btn {
+    margin-top: 50px;
+  }
 }

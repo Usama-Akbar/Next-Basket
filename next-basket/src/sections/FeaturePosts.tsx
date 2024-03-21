@@ -9,7 +9,7 @@ const FeaturePosts: React.FC = () => {
   ];
 
   return (
-    <div className="features-products-main">
+    <div className="features-posts-main ">
       <div className="d-flex flex-column align-items-center">
         <span className="post-heading">Practice Advice</span>
         <span className="post-txt">Featured Posts</span>

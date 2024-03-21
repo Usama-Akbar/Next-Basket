@@ -3,3 +3,19 @@
   display: flex;
   justify-content: center;
 }
+.poster-homepage-mobile {
+  display: none;
+}
+@media only screen and (max-width: 999px) {
+  .poster-homepage {
+    display: none;
+  }
+  .poster-homepage-mobile {
+    padding: 24px 41px;
+    display: flex;
+    flex-direction: column;
+  }
+  .poster-homepage-mobile > img {
+    margin-top: 15px;
+  }
+}

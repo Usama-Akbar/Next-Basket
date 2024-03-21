@@ -44,7 +44,7 @@ const FeatureProducts: React.FC = () => {
           <Product key={product.id} product={product} />
         ))}
       </div>
-      <div className="text-center">
+      <div className="text-center load-more-btn">
         {displayCount < products.length ? (
           <Button variant="outlined" onClick={loadMoreProducts}>
             LOAD MORE PRODUCTS
