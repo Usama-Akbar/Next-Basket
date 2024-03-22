@@ -1,6 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
+
 const Header: React.FC = () => {
+  const router = useRouter();
+
   const [mobilenav, setMobileNav] = React.useState<Boolean>(false);
   return (
     <div>
@@ -71,7 +75,9 @@ const Header: React.FC = () => {
       </div>
       <div className="header-secondary">
         <div className="d-flex align-items-center">
-          <span className="logo">Bandage</span>
+          <span onClick={() => router.push("/")} className="logo">
+            Bandage
+          </span>
           <div className="links-div">
             <span className="link">Home</span>
             <span className="link">Shop</span>
