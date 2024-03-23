@@ -11,12 +11,32 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../store/store";
 import { addToCart } from "../../features/cart/cartSlice";
 import { addToWishlist } from "@/features/wishlist/wishlistSlice";
+import Snackbar from "@mui/material/Snackbar";
 const ProductPage: React.FC = () => {
   const [products, setProducts] = useState([]);
   const [images, setimages] = useState<any[]>([]);
   const [productDetails, setproductDetails] = useState<any>([]);
   const router = useRouter();
   const { id } = router.query;
+  const [opensnackbar, setopensnackbar] = React.useState(false);
+  const [snackbarMessage, setsnackbarMessage] = React.useState("");
+
+  const handleSnackbar = () => {
+    setopensnackbar(true);
+    setTimeout(() => {
+      setopensnackbar(false);
+    }, 3000);
+  };
+  const handleCloseSnackbar = (
+    event: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setopensnackbar(false);
+  };
   const dispatch: AppDispatch = useDispatch();
   useEffect(() => {
     const fetchProduct = async () => {
@@ -60,6 +80,13 @@ const ProductPage: React.FC = () => {
 
   return (
     <div>
+      <Snackbar
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+        open={opensnackbar}
+        onClose={handleCloseSnackbar}
+        message={snackbarMessage}
+        key={"bottom" + "right"}
+      />
       <div className="product-top-details">
         <div className="breadcrumbs-div">
           <Breadcrumbs
@@ -126,7 +153,11 @@ const ProductPage: React.FC = () => {
                   </Button>
 
                   <div
-                    onClick={() => dispatch(addToWishlist(productDetails))}
+                    onClick={() => {
+                      dispatch(addToWishlist(productDetails));
+                      setsnackbarMessage("Item added to wishlist");
+                      handleSnackbar();
+                    }}
                     className="product-badge ms-3"
                   >
                     <Image
@@ -138,7 +169,11 @@ const ProductPage: React.FC = () => {
                     />
                   </div>
                   <div
-                    onClick={() => dispatch(addToCart(productDetails))}
+                    onClick={() => {
+                      dispatch(addToCart(productDetails));
+                      setsnackbarMessage("Item added to cart");
+                      handleSnackbar();
+                    }}
                     className="product-badge ms-3"
                   >
                     <Image
