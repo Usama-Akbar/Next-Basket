@@ -13,9 +13,8 @@ import { addToCart } from "../../features/cart/cartSlice";
 import { addToWishlist } from "@/features/wishlist/wishlistSlice";
 const ProductPage: React.FC = () => {
   const [products, setProducts] = useState([]);
-  const [images, setimages] = useState([]);
-  const [productDetails, setproductDetails] = useState([]);
-  const [displayCount, setDisplayCount] = useState<number>(8);
+  const [images, setimages] = useState<any[]>([]);
+  const [productDetails, setproductDetails] = useState<any>([]);
   const router = useRouter();
   const { id } = router.query;
   const dispatch: AppDispatch = useDispatch();
@@ -23,7 +22,7 @@ const ProductPage: React.FC = () => {
     const fetchProduct = async () => {
       if (id) {
         try {
-          const slideImages = [];
+          const slideImages: { original: string; thumbnail: string }[] = [];
           const response = await fetch(`https://dummyjson.com/products/${id}`);
           const data = await response.json();
           setproductDetails(data);
@@ -211,8 +210,8 @@ const ProductPage: React.FC = () => {
           BESTSELLER PRODUCTS
         </span>
         <div className="best-products-list-div">
-          {products.slice(0, displayCount).map((product) => (
-            <Product key={product.id} product={product} />
+          {products.slice(0, 8).map((product) => (
+            <Product product={product} />
           ))}
         </div>
       </div>
