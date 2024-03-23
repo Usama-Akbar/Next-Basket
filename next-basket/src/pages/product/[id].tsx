@@ -7,7 +7,10 @@ import { CirclePicker } from "react-color";
 import Button from "@mui/material/Button";
 import Product from "@/components/Product";
 import { useRouter } from "next/router";
-
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../store/store";
+import { addToCart } from "../../features/cart/cartSlice";
+import { addToWishlist } from "@/features/wishlist/wishlistSlice";
 const ProductPage: React.FC = () => {
   const [products, setProducts] = useState([]);
   const [images, setimages] = useState([]);
@@ -15,7 +18,7 @@ const ProductPage: React.FC = () => {
   const [displayCount, setDisplayCount] = useState<number>(8);
   const router = useRouter();
   const { id } = router.query;
-
+  const dispatch: AppDispatch = useDispatch();
   useEffect(() => {
     const fetchProduct = async () => {
       if (id) {
@@ -28,8 +31,6 @@ const ProductPage: React.FC = () => {
             slideImages.push({
               original: imageUrl,
               thumbnail: imageUrl,
-              originalHeight: "506px",
-              originalWidth: "450px",
             });
           });
           setimages(slideImages);
@@ -78,7 +79,7 @@ const ProductPage: React.FC = () => {
             {breadcrumbs}
           </Breadcrumbs>
         </div>
-        <div className="product-details-div d-flex">
+        <div className="product-details-div">
           <div>
             <ImageGallery
               showPlayButton={false}
@@ -90,7 +91,7 @@ const ProductPage: React.FC = () => {
             <span className="specific-product-title">
               {productDetails.title}
             </span>
-            <div className="d-flex align-items-center mt-3 mb-4">
+            <div className="product-rating-div mt-3 mb-4">
               <Rating name="read-only" value={productDetails.rating} readOnly />
               <span className="specific-product-reviews ms-2">10 Reviews</span>
             </div>
@@ -118,13 +119,17 @@ const ProductPage: React.FC = () => {
                       background: "#23A6F0",
                       borderRadius: "0px, 5px, 5px, 0px",
                     }}
+                    className="options-btn"
                     variant="contained"
                     size="large"
                   >
                     Select Options
                   </Button>
 
-                  <div className="product-badge ms-3">
+                  <div
+                    onClick={() => dispatch(addToWishlist(productDetails))}
+                    className="product-badge ms-3"
+                  >
                     <Image
                       alt="poster"
                       width={17}
@@ -133,7 +138,10 @@ const ProductPage: React.FC = () => {
                       src={"/assets/heart-black.png"}
                     />
                   </div>
-                  <div className="product-badge ms-3">
+                  <div
+                    onClick={() => dispatch(addToCart(productDetails))}
+                    className="product-badge ms-3"
+                  >
                     <Image
                       alt="poster"
                       width={20}

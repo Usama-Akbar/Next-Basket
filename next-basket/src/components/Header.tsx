@@ -1,13 +1,136 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-
+import Modal from "react-bootstrap/Modal";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
+import { removeToCart, emptyCart } from "../features/cart/cartSlice";
+import {
+  addToWishlist,
+  removeToWishlist,
+  emptyWishlist,
+} from "@/features/wishlist/wishlistSlice";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../store/store";
 const Header: React.FC = () => {
+  const [cartmodalShow, setcartmodalShow] = React.useState(false);
+  const [wishlistmodalShow, setwishlistmodalShow] = React.useState(false);
   const router = useRouter();
-
   const [mobilenav, setMobileNav] = React.useState<Boolean>(false);
+  const dispatch: AppDispatch = useDispatch();
+  const cart = useSelector((state: RootState) => state.cart.products);
+  const wishlist = useSelector((state: RootState) => state.wishlist.products);
+  console.log(wishlist);
   return (
     <div>
+      <Modal
+        show={wishlistmodalShow}
+        size="lg"
+        onHide={() => setwishlistmodalShow(false)}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Body style={{ padding: "20px" }}>
+          <div className="cart-heading-div">
+            <span className="shopping-cart-heading">Shopping Wishlist</span>
+            <span
+              onClick={() => dispatch(emptyWishlist())}
+              className="remove-all-heading"
+            >
+              Remove all
+            </span>
+          </div>
+          {wishlist.length > 0 ? (
+            wishlist.map((data: any, index) => (
+              <div className="cart-main-div">
+                <Image
+                  height="100"
+                  width="100"
+                  alt="phone"
+                  className="ms-3"
+                  unoptimized
+                  src={data.thumbnail}
+                />
+                <div className="cart-product-details">
+                  <span className="product-title">{data.title}</span>
+                  <span className="product-brand">{data.category}</span>
+                  <span className="product-category">{data.brand}</span>
+                </div>
+                <div className="cart-actions-div">
+                  <span className="product-title">${data.price}</span>
+                  <span
+                    onClick={() => dispatch(removeToWishlist(data))}
+                    className="product-remove-txt"
+                  >
+                    Remove
+                  </span>
+                </div>
+              </div>
+            ))
+          ) : (
+            <div style={{ padding: "10%", textAlign: "center" }}>
+              Wishlist is Empty
+            </div>
+          )}
+        </Modal.Body>
+      </Modal>
+      <Modal
+        show={cartmodalShow}
+        size="lg"
+        onHide={() => setcartmodalShow(false)}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Body style={{ padding: "20px" }}>
+          <div className="cart-heading-div">
+            <span className="shopping-cart-heading">Shopping Cart</span>
+            <span
+              onClick={() => dispatch(emptyCart())}
+              className="remove-all-heading"
+            >
+              Remove all
+            </span>
+          </div>
+          {cart.length > 0 ? (
+            cart.map((data: any, index) => (
+              <div className="cart-main-div">
+                <Image
+                  height="100"
+                  width="100"
+                  alt="phone"
+                  className="ms-3"
+                  unoptimized
+                  src={data.thumbnail}
+                />
+                <div className="cart-product-details">
+                  <span className="product-title">{data.title}</span>
+                  <span className="product-brand">{data.category}</span>
+                  <span className="product-category">{data.brand}</span>
+                </div>
+                <div className="cart-actions-div">
+                  <span className="product-title">${data.price}</span>
+                  <span
+                    onClick={() => dispatch(addToWishlist(data))}
+                    className="product-save-txt"
+                  >
+                    save for later
+                  </span>
+                  <span
+                    onClick={() => dispatch(removeToCart(data))}
+                    className="product-remove-txt"
+                  >
+                    Remove
+                  </span>
+                </div>
+              </div>
+            ))
+          ) : (
+            <div style={{ padding: "10%", textAlign: "center" }}>
+              Cart is Empty
+            </div>
+          )}
+        </Modal.Body>
+      </Modal>
       <div className="header-main">
         <div className="d-flex">
           <div>
@@ -105,25 +228,29 @@ const Header: React.FC = () => {
               unoptimized
               src={"/assets/search.png"}
             />
-            <div className="ms-4">
+            <div onClick={() => setcartmodalShow(true)} className="ms-4">
               <Image
                 height="16"
                 width="16"
                 alt="phone"
+                style={{ cursor: "pointer" }}
                 unoptimized
                 src={"/assets/cart.png"}
               />
-              <span className="secondary-header-txt ms-1">1</span>
+              <span className="secondary-header-txt ms-1">{cart.length}</span>
             </div>
-            <div className="ms-4">
+            <div onClick={() => setwishlistmodalShow(true)} className="ms-4">
               <Image
                 height="16"
                 width="16"
+                style={{ cursor: "pointer" }}
                 alt="phone"
                 unoptimized
                 src={"/assets/heart.png"}
               />
-              <span className="secondary-header-txt ms-1">1</span>
+              <span className="secondary-header-txt ms-1">
+                {wishlist.length}
+              </span>
             </div>
           </div>
         </div>
