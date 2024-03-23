@@ -55,6 +55,7 @@ const Hometop: React.FC = () => {
       <div className="poster-homepage-mobile">
         {mobileBanners.map((banner, index) => (
           <Image
+            key={index}
             alt="banner"
             width={0}
             height={0}

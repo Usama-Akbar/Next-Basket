@@ -19,7 +19,7 @@ export const cartSlice = createSlice({
     removeToCart: (state: any, action: PayloadAction<CartState>) => {
       const product = action.payload;
       state.products = state.products.filter(
-        (item: any) => item.id !== product.id
+        (item: any) => item.id !== product
       );
     },
     emptyCart: (state) => {

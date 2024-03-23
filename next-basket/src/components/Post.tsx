@@ -28,10 +28,10 @@ const Post: React.FC<PostProps> = ({ post }) => {
           </div>
           <div className="d-flex flex-column">
             <span className="post-title">
-              Loudest à la Madison #1 (L'integral)
+              Loudest à la Madison #1 (integral)
             </span>
             <span className="post-desc">
-              We focus on ergonomics and meeting you where you work. It's only a
+              We focus on ergonomics and meeting you where you work. Its only a
               keystroke away.
             </span>
             <div className="d-flex justify-content-between post-attrs">

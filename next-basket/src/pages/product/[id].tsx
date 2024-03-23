@@ -76,7 +76,7 @@ const ProductPage: React.FC = () => {
     fetchProducts();
   }, []);
 
-  const breadcrumbs = [<span>Home</span>, <span>Shop</span>];
+  const breadcrumbs = [<span key={1}>Home</span>, <span key={2}>Shop</span>];
 
   return (
     <div>
@@ -245,8 +245,8 @@ const ProductPage: React.FC = () => {
           BESTSELLER PRODUCTS
         </span>
         <div className="best-products-list-div">
-          {products.slice(0, 8).map((product) => (
-            <Product product={product} />
+          {products.slice(0, 8).map((product, index) => (
+            <Product key={index} product={product} />
           ))}
         </div>
       </div>

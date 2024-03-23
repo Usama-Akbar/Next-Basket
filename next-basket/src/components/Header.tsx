@@ -42,7 +42,7 @@ const Header: React.FC = () => {
           </div>
           {wishlist.length > 0 ? (
             wishlist.map((data: any, index) => (
-              <div className="cart-main-div">
+              <div key={index} className="cart-main-div">
                 <Image
                   height="100"
                   width="100"
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
                 <div className="cart-actions-div">
                   <span className="product-title">${data.price}</span>
                   <span
-                    onClick={() => dispatch(removeToWishlist(data))}
+                    onClick={() => dispatch(removeToWishlist(data.id))}
                     className="product-remove-txt"
                   >
                     Remove
@@ -93,7 +93,7 @@ const Header: React.FC = () => {
           </div>
           {cart.length > 0 ? (
             cart.map((data: any, index) => (
-              <div className="cart-main-div">
+              <div key={index} className="cart-main-div">
                 <Image
                   height="100"
                   width="100"
@@ -116,7 +116,7 @@ const Header: React.FC = () => {
                     save for later
                   </span>
                   <span
-                    onClick={() => dispatch(removeToCart(data))}
+                    onClick={() => dispatch(removeToCart(data.id))}
                     className="product-remove-txt"
                   >
                     Remove
