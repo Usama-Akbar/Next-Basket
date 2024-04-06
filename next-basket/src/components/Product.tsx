@@ -29,7 +29,7 @@ const Product: React.FC<ProductProps> = ({ product }) => {
             {" "}
             ${(product.discountPercentage / product.price).toFixed(2)}{" "}
           </span>
-          <span className="product-price ms-2 mb-4">$16.48</span>
+          <span className="product-price ms-2 mb-4">${product.price}</span>
         </div>
       </div>
     </div>
